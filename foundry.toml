@@ -3,4 +3,18 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
+remappings = ['@openzeppelin=lib/openzeppelin-contracts']
+
+# 它允许你在 Solidity 智能合约中调用外部的代码库或者接口，使用DevOpsTools库合约，调用get_most_recent_deployment方法
+ffi = true
+
+# 指定 Foundry 在执行时对文件系统的访问权限
+fs_permissions = [
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./images/" },
+]
+
+solc_version = "0.8.20"
+optimizer_runs = 200
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
